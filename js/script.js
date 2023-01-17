@@ -24,6 +24,7 @@ Aggiungere bottoni di start/stop e di inversione del meccanismo di autoplay.
 
 /*
 1. creo un array di oggetti contenenti 4 immagini;
+
 */
 
 const slider = [
