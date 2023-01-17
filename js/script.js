@@ -128,8 +128,6 @@ frecciaSinistra.addEventListener("click", function () {
   console.log("cliccato sinistra");
 
   if (slideCorrente <= allSlide.length - 1 && slideCorrente > 0) {
-    console.log("ccccccccccc");
-
     allSlide[slideCorrente].classList.remove("visibile");
     allTitoli[titoloCorrente].classList.remove("visibile");
     allDesc[descCorrente].classList.remove("visibile");
@@ -159,42 +157,3 @@ frecciaSinistra.addEventListener("click", function () {
 });
 
 // -------------------------------------------
-
-nextArrow.addEventListener(
-  "click",
-
-  function () {
-    if (currentSlide < allSlides.length - 1) {
-      console.log("ho cliccato su .next");
-      allSlides[currentSlide].classList.remove("current");
-      currentSlide = currentSlide + 1;
-
-      allSlides[currentSlide].classList.add("current");
-    } else if (currentSlide == allSlides.length - 1) {
-      console.log("torno indietro");
-      allSlides[currentSlide].classList.remove("current");
-      currentSlide = 0;
-      allSlides[currentSlide].classList.add("current");
-    }
-  }
-);
-
-previousArrow.addEventListener(
-  "click",
-
-  function () {
-    if (currentSlide <= allSlides.length - 1 && currentSlide > 0) {
-      console.log("ho cliccato su .previous");
-      allSlides[currentSlide].classList.remove("current");
-      currentSlide = currentSlide - 1;
-
-      allSlides[currentSlide].classList.add("current");
-    } else if (currentSlide == 0) {
-      console.log("torno indietro");
-
-      allSlides[currentSlide].classList.remove("current");
-      currentSlide = 4;
-      allSlides[currentSlide].classList.add("current");
-    }
-  }
-);
