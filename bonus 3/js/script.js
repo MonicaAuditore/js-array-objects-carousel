@@ -252,6 +252,7 @@ frecciaSinistra.addEventListener("click", function () {
 //-----------------------------------------------------------------------
 
 const start = document.querySelector(".start");
+const ferma = document.querySelector(".stop");
 
 start.addEventListener("click", function () {
   const intervallo = setInterval(myFunction, 3000);
@@ -288,6 +289,8 @@ start.addEventListener("click", function () {
     }
   }
 
+  //-----------------------------------------------------------------------
+
   const intervalloTh = setInterval(myFunctionTh, 3000);
   function myFunctionTh() {
     if (thumbnailsCorrente < allthumbnails.length - 1) {
@@ -301,11 +304,12 @@ start.addEventListener("click", function () {
       thumbnailsCorrente = 0;
       allthumbnails[thumbnailsCorrente].classList.add("noShadow");
     }
+
+    //-----------------------------------------------------------------------
+
+    ferma.addEventListener("click", function myStopFunction() {
+      clearInterval(intervallo);
+      clearInterval(intervalloTh);
+    });
   }
-});
-
-const ferma = document.querySelector(".stop");
-
-ferma.addEventListener("click", function myStopFunction() {
-  clearInterval(intervallo);
 });
