@@ -17,12 +17,6 @@
   transform: translate(-50%, -50%);
 }
 
-.slide img {
-  /* position: absolute;
-  top: 0;
-  left: 0; */
-}
-
 .freccia {
   z-index: 200;
   width: 80px;

@@ -40,24 +40,24 @@ Aggiungere bottoni di start/stop e di inversione del meccanismo di autoplay.
 
 const slider = [
   (imgUno = {
-    titolo: `<h3>immagine Uno</h3>`,
+    titolo: `<h3>Titolo immagine Uno</h3>`,
     url: `<img src="img/01_verde_img_640x360.png"`,
-    descrizione: "desc img Uno",
+    descrizione: "Descrizione img Uno",
   }),
   (imgDue = {
-    titolo: `<h3>immagine Due</h3>`,
+    titolo: `<h3>Titolo immagine Due</h3>`,
     url: `<img src="img/02_carmine_img_640x360.png"`,
-    descrizione: "desc img Due",
+    descrizione: "Descrizione img Due",
   }),
   (imgTre = {
-    titolo: `<h3>immagine Tre</h3>`,
+    titolo: `<h3>Titolo immagine Tre</h3>`,
     url: `<img src="img/03_magenta_img_640x360.png">`,
-    descrizione: "desc img Tre",
+    descrizione: "Descrizione img Tre",
   }),
   (imgQuattro = {
-    titolo: `<h3>immagine Quattro</h3>`,
+    titolo: `<h3>Titolo immagine Quattro</h3>`,
     url: `<img src="img/04_viola_img_640x360.png">`,
-    descrizione: "desc img Quattro",
+    descrizione: "Descrizione img Quattro",
   }),
 ];
 
@@ -89,30 +89,112 @@ let slideCorrente = 0;
 
 frecciaDestra.addEventListener("click", function () {
   console.log("cliccato destra");
-  allSlide[slideCorrente].classList.remove("visibile");
-  allTitoli[titoloCorrente].classList.remove("visibile");
-  allDesc[descCorrente].classList.remove("visibile");
 
-  slideCorrente = slideCorrente + 1;
-  titoloCorrente = titoloCorrente + 1;
-  descCorrente = descCorrente + 1;
+  if (slideCorrente < allSlide.length - 1) {
+    console.log("vado avanti");
 
-  allSlide[slideCorrente].classList.add("visibile");
-  allTitoli[titoloCorrente].classList.add("visibile");
-  allDesc[descCorrente].classList.add("visibile");
+    allSlide[slideCorrente].classList.remove("visibile");
+    allTitoli[titoloCorrente].classList.remove("visibile");
+    allDesc[descCorrente].classList.remove("visibile");
+
+    slideCorrente = slideCorrente + 1;
+    titoloCorrente = titoloCorrente + 1;
+    descCorrente = descCorrente + 1;
+
+    allSlide[slideCorrente].classList.add("visibile");
+    allTitoli[titoloCorrente].classList.add("visibile");
+    allDesc[descCorrente].classList.add("visibile");
+  } else if (
+    slideCorrente == allSlide.length - 1 &&
+    titoloCorrente == allTitoli.length - 1 &&
+    descCorrente == allDesc.length - 1
+  ) {
+    console.log("torno indietro");
+
+    allSlide[slideCorrente].classList.remove("visibile");
+    allTitoli[titoloCorrente].classList.remove("visibile");
+    allDesc[descCorrente].classList.remove("visibile");
+
+    titoloCorrente = 0;
+    descCorrente = 0;
+    slideCorrente = 0;
+    allSlide[slideCorrente].classList.add("visibile");
+    allTitoli[titoloCorrente].classList.add("visibile");
+    allDesc[descCorrente].classList.add("visibile");
+  }
 });
 
 frecciaSinistra.addEventListener("click", function () {
   console.log("cliccato sinistra");
-  allSlide[slideCorrente].classList.remove("visibile");
-  allTitoli[titoloCorrente].classList.remove("visibile");
-  allDesc[descCorrente].classList.remove("visibile");
 
-  slideCorrente = slideCorrente - 1;
-  titoloCorrente = titoloCorrente - 1;
-  descCorrente = descCorrente - 1;
+  if (slideCorrente <= allSlide.length - 1 && slideCorrente > 0) {
+    console.log("ccccccccccc");
 
-  allSlide[slideCorrente].classList.add("visibile");
-  allTitoli[titoloCorrente].classList.add("visibile");
-  allDesc[descCorrente].classList.add("visibile");
+    allSlide[slideCorrente].classList.remove("visibile");
+    allTitoli[titoloCorrente].classList.remove("visibile");
+    allDesc[descCorrente].classList.remove("visibile");
+
+    slideCorrente = slideCorrente - 1;
+    titoloCorrente = titoloCorrente - 1;
+    descCorrente = descCorrente - 1;
+
+    allSlide[slideCorrente].classList.add("visibile");
+    allTitoli[titoloCorrente].classList.add("visibile");
+    allDesc[descCorrente].classList.add("visibile");
+  } else if (slideCorrente == 0) {
+    console.log("stop");
+
+    allSlide[slideCorrente].classList.remove("visibile");
+    allTitoli[titoloCorrente].classList.remove("visibile");
+    allDesc[descCorrente].classList.remove("visibile");
+
+    slideCorrente = 3;
+    titoloCorrente = 3;
+    descCorrente = 3;
+
+    allSlide[slideCorrente].classList.add("visibile");
+    allTitoli[titoloCorrente].classList.add("visibile");
+    allDesc[descCorrente].classList.add("visibile");
+  }
 });
+
+// -------------------------------------------
+
+nextArrow.addEventListener(
+  "click",
+
+  function () {
+    if (currentSlide < allSlides.length - 1) {
+      console.log("ho cliccato su .next");
+      allSlides[currentSlide].classList.remove("current");
+      currentSlide = currentSlide + 1;
+
+      allSlides[currentSlide].classList.add("current");
+    } else if (currentSlide == allSlides.length - 1) {
+      console.log("torno indietro");
+      allSlides[currentSlide].classList.remove("current");
+      currentSlide = 0;
+      allSlides[currentSlide].classList.add("current");
+    }
+  }
+);
+
+previousArrow.addEventListener(
+  "click",
+
+  function () {
+    if (currentSlide <= allSlides.length - 1 && currentSlide > 0) {
+      console.log("ho cliccato su .previous");
+      allSlides[currentSlide].classList.remove("current");
+      currentSlide = currentSlide - 1;
+
+      allSlides[currentSlide].classList.add("current");
+    } else if (currentSlide == 0) {
+      console.log("torno indietro");
+
+      allSlides[currentSlide].classList.remove("current");
+      currentSlide = 4;
+      allSlides[currentSlide].classList.add("current");
+    }
+  }
+);
