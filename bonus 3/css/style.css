@@ -96,6 +96,11 @@
 }
 .buttons {
   position: absolute;
-  bottom: 205px;
-  left: 47%;
+  bottom: 227px;
+  left: 45.5%;
+}
+
+.start,
+.stop {
+  padding: 7px 20px;
 }
