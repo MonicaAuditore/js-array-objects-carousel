@@ -23,5 +23,28 @@ Aggiungere bottoni di start/stop e di inversione del meccanismo di autoplay.
 */
 
 /*
-
+1. creo un array di oggetti contenenti 4 immagini;
 */
+
+const slider = [
+  (imgUno = {
+    titolo: "immagine uno",
+    url: "img/01_viola_img_640x360.png",
+    descrizione: "desc img uno",
+  }),
+  (imgDue = {
+    titolo: "immagine due",
+    url: "img/02_magenta_img_640x360.png",
+    descrizione: "desc img due",
+  }),
+  (imgTre = {
+    titolo: "immagine tre",
+    url: "img/03_carmine_img_640x360.png",
+    descrizione: "desc img tre",
+  }),
+  (imgQuattro = {
+    titolo: "immagine quattro",
+    url: "img/04_verde_img_640x360.png",
+    descrizione: "desc img quattro",
+  }),
+];
