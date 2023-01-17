@@ -45,17 +45,17 @@ const slider = [
     descrizione: "desc img Uno",
   }),
   (imgDue = {
-    titolo: "immagine Due",
+    titolo: `<h3>immagine Due</h3>`,
     url: `<img src="img/02_carmine_img_640x360.png"`,
     descrizione: "desc img Due",
   }),
   (imgTre = {
-    titolo: "immagine Tre",
+    titolo: `<h3>immagine Tre</h3>`,
     url: `<img src="img/03_magenta_img_640x360.png">`,
     descrizione: "desc img Tre",
   }),
   (imgQuattro = {
-    titolo: "immagine Quattro",
+    titolo: `<h3>immagine Quattro</h3>`,
     url: `<img src="img/04_viola_img_640x360.png">`,
     descrizione: "desc img Quattro",
   }),
@@ -65,33 +65,54 @@ const contenitoreSlide = document.querySelector(".slide");
 const frecciaDestra = document.querySelector(".frecciaDestra");
 const frecciaSinistra = document.querySelector(".frecciaSinistra");
 
-//-----------------------------------------------------------------------tolto classe TestoNascosto
+//-----------------------------------------------------------------------
 
 for (let i = 0; i < slider.length; i++) {
-  contenitoreSlide.innerHTML += `<div class="title">${slider[i].titolo}</div>`;
+  contenitoreSlide.innerHTML += `<div class="title nascosta">${slider[i].titolo}</div>`;
+  contenitoreSlide.innerHTML += `<div class="desc nascosta">${slider[i].descrizione}</div>`;
   contenitoreSlide.innerHTML += `<div class="immagini nascosta">${slider[i].url}</div>`;
 }
 
 const allSlide = document.querySelectorAll(".immagini");
+const allTitoli = document.querySelectorAll(".title");
+const allDesc = document.querySelectorAll(".desc");
 console.log("allSlide", allSlide);
+console.log("allTitoli", allTitoli);
 
 allSlide[0].classList.add("visibile");
+allTitoli[0].classList.add("visible");
+allDesc[0].classList.add("visibile");
 
-// let descCorrente = 0;
+let descCorrente = 0;
+let titoloCorrente = 0;
 let slideCorrente = 0;
 
 frecciaDestra.addEventListener("click", function () {
   console.log("cliccato destra");
   allSlide[slideCorrente].classList.remove("visibile");
+  allTitoli[titoloCorrente].classList.remove("visibile");
+  allDesc[descCorrente].classList.remove("visibile");
+
   slideCorrente = slideCorrente + 1;
+  titoloCorrente = titoloCorrente + 1;
+  descCorrente = descCorrente + 1;
+
   allSlide[slideCorrente].classList.add("visibile");
+  allTitoli[titoloCorrente].classList.add("visibile");
+  allDesc[descCorrente].classList.add("visibile");
 });
 
 frecciaSinistra.addEventListener("click", function () {
   console.log("cliccato sinistra");
   allSlide[slideCorrente].classList.remove("visibile");
-  slideCorrente = slideCorrente - 1;
-  allSlide[slideCorrente].classList.add("visibile");
-});
+  allTitoli[titoloCorrente].classList.remove("visibile");
+  allDesc[descCorrente].classList.remove("visibile");
 
-// console.log(slider[0].titolo);
+  slideCorrente = slideCorrente - 1;
+  titoloCorrente = titoloCorrente - 1;
+  descCorrente = descCorrente - 1;
+
+  allSlide[slideCorrente].classList.add("visibile");
+  allTitoli[titoloCorrente].classList.add("visibile");
+  allDesc[descCorrente].classList.add("visibile");
+});

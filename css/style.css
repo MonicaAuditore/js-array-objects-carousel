@@ -51,10 +51,24 @@
   display: none;
 }
 
-.TestoNascosto {
-  display: none;
-}
-
 .visibile {
   display: block;
+}
+
+.slide {
+  position: relative;
+}
+
+.title,
+.desc {
+  position: absolute;
+  right: 20px;
+}
+
+.title {
+  bottom: 40px;
+}
+
+.desc {
+  bottom: 20px;
 }
