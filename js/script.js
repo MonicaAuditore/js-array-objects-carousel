@@ -80,7 +80,7 @@ console.log("allSlide", allSlide);
 console.log("allTitoli", allTitoli);
 
 allSlide[0].classList.add("visibile");
-allTitoli[0].classList.add("visible");
+allTitoli[0].classList.add("visibile");
 allDesc[0].classList.add("visibile");
 
 let descCorrente = 0;
@@ -104,11 +104,7 @@ frecciaDestra.addEventListener("click", function () {
     allSlide[slideCorrente].classList.add("visibile");
     allTitoli[titoloCorrente].classList.add("visibile");
     allDesc[descCorrente].classList.add("visibile");
-  } else if (
-    slideCorrente == allSlide.length - 1 &&
-    titoloCorrente == allTitoli.length - 1 &&
-    descCorrente == allDesc.length - 1
-  ) {
+  } else if (slideCorrente == allSlide.length - 1) {
     console.log("torno indietro");
 
     allSlide[slideCorrente].classList.remove("visibile");
@@ -156,4 +152,4 @@ frecciaSinistra.addEventListener("click", function () {
   }
 });
 
-// -------------------------------------------
+//-----------------------------------------------------------------------
