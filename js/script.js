@@ -33,13 +33,14 @@ Aggiungere bottoni di start/stop e di inversione del meccanismo di autoplay.
 2. creo il carosello statico in html e css;
 3. creo due classi in css, "nascosta" e "visibile"; tolgo le immagini in html e inserisco le img da js;
 4. animo le frecce;
-5. inserisco titolo e descrizione;
+5. inserisco titolo e descrizione: creo un nuovo array di soli titoli uno di descrizione;
+6. li inserisco nello stesso modo di come ho inserito le immagini; 
 
 */
 
 const slider = [
   (imgUno = {
-    titolo: "immagine Uno",
+    titolo: `<h3>immagine Uno</h3>`,
     url: `<img src="img/01_verde_img_640x360.png"`,
     descrizione: "desc img Uno",
   }),
@@ -64,7 +65,10 @@ const contenitoreSlide = document.querySelector(".slide");
 const frecciaDestra = document.querySelector(".frecciaDestra");
 const frecciaSinistra = document.querySelector(".frecciaSinistra");
 
+//-----------------------------------------------------------------------tolto classe TestoNascosto
+
 for (let i = 0; i < slider.length; i++) {
+  contenitoreSlide.innerHTML += `<div class="title">${slider[i].titolo}</div>`;
   contenitoreSlide.innerHTML += `<div class="immagini nascosta">${slider[i].url}</div>`;
 }
 
@@ -73,6 +77,7 @@ console.log("allSlide", allSlide);
 
 allSlide[0].classList.add("visibile");
 
+// let descCorrente = 0;
 let slideCorrente = 0;
 
 frecciaDestra.addEventListener("click", function () {
@@ -88,3 +93,5 @@ frecciaSinistra.addEventListener("click", function () {
   slideCorrente = slideCorrente - 1;
   allSlide[slideCorrente].classList.add("visibile");
 });
+
+// console.log(slider[0].titolo);

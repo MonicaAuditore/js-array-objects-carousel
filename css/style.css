@@ -18,9 +18,9 @@
 }
 
 .slide img {
-  position: absolute;
+  /* position: absolute;
   top: 0;
-  left: 0;
+  left: 0; */
 }
 
 .freccia {
@@ -48,6 +48,10 @@
 }
 
 .nascosta {
+  display: none;
+}
+
+.TestoNascosto {
   display: none;
 }
 
