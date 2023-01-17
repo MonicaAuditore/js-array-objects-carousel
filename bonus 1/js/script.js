@@ -67,10 +67,14 @@ const frecciaSinistra = document.querySelector(".frecciaSinistra");
 
 //-----------------------------------------------------------------------
 
+let thumb = document.querySelector(".thumbnails");
+
 for (let i = 0; i < slider.length; i++) {
   contenitoreSlide.innerHTML += `<div class="title nascosta">${slider[i].titolo}</div>`;
   contenitoreSlide.innerHTML += `<div class="desc nascosta">${slider[i].descrizione}</div>`;
   contenitoreSlide.innerHTML += `<div class="immagini nascosta">${slider[i].url}</div>`;
+
+  thumb.innerHTML += `<div class="immaginiThumb shadow">${slider[i].url}</div>`;
 }
 
 const allSlide = document.querySelectorAll(".immagini");
@@ -114,6 +118,7 @@ frecciaDestra.addEventListener("click", function () {
     titoloCorrente = 0;
     descCorrente = 0;
     slideCorrente = 0;
+
     allSlide[slideCorrente].classList.add("visibile");
     allTitoli[titoloCorrente].classList.add("visibile");
     allDesc[descCorrente].classList.add("visibile");
@@ -154,12 +159,41 @@ frecciaSinistra.addEventListener("click", function () {
 
 //-----------------------------------------------------------------------
 
-let thumb = document.querySelector(".thumbnails");
+const allthumbnails = document.querySelectorAll(".immaginiThumb");
+console.log("allthumbnails", allthumbnails);
 
-for (let i = 0; i < slider.length; i++) {
-  thumb.innerHTML += `<div class="immaginiThumb">${slider[i].url}</div>`;
-}
+let thumbnailsCorrente = 0;
 
-const allthumbnails = document.querySelectorAll(".thumbnails");
+allthumbnails[0].classList.add("noShadow");
 
-//-----------------------------------------------------------------------
+frecciaDestra.addEventListener("click", function () {
+  if (thumbnailsCorrente < allthumbnails.length - 1) {
+    allthumbnails[thumbnailsCorrente].classList.remove("noShadow");
+
+    thumbnailsCorrente = thumbnailsCorrente + 1;
+
+    allthumbnails[thumbnailsCorrente].classList.add("noShadow");
+  } else if (thumbnailsCorrente == allthumbnails.length - 1) {
+    allthumbnails[thumbnailsCorrente].classList.remove("noShadow");
+    thumbnailsCorrente = 0;
+    allthumbnails[thumbnailsCorrente].classList.add("noShadow");
+  }
+});
+
+frecciaSinistra.addEventListener("click", function () {
+  if (
+    thumbnailsCorrente <= allthumbnails.length - 1 &&
+    thumbnailsCorrente > 0
+  ) {
+    allthumbnails[thumbnailsCorrente].classList.remove("noShadow");
+
+    thumbnailsCorrente = thumbnailsCorrente - 1;
+
+    allthumbnails[thumbnailsCorrente].classList.add("noShadow");
+  } else if (thumbnailsCorrente == 0) {
+    allthumbnails[thumbnailsCorrente].classList.remove("noShadow");
+
+    thumbnailsCorrente = 3;
+    allthumbnails[thumbnailsCorrente].classList.add("noShadow");
+  }
+});

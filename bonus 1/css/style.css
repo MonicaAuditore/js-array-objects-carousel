@@ -90,3 +90,7 @@
 .shadow {
   opacity: 0.5;
 }
+
+.noShadow {
+  opacity: 1;
+}
