@@ -101,6 +101,7 @@
 }
 
 .start,
-.stop {
+.stop,
+.invertito {
   padding: 7px 20px;
 }

@@ -252,6 +252,7 @@ frecciaSinistra.addEventListener("click", function () {
 //-----------------------------------------------------------------------
 
 const start = document.querySelector(".start");
+const inverti = document.querySelector(".invertito");
 const ferma = document.querySelector(".stop");
 
 start.addEventListener("click", function () {
@@ -313,3 +314,63 @@ start.addEventListener("click", function () {
     });
   }
 });
+
+//Inverti ---------------------------------
+
+inverti.addEventListener("click", function () {
+  const intervalloInv = setInterval(myFunctionInv, 3000);
+  function myFunctionInv() {
+    if (slideCorrente <= allSlide.length - 1 && slideCorrente > 0) {
+      allSlide[slideCorrente].classList.remove("visibile");
+      allTitoli[titoloCorrente].classList.remove("visibile");
+      allDesc[descCorrente].classList.remove("visibile");
+
+      slideCorrente = slideCorrente - 1;
+      titoloCorrente = titoloCorrente - 1;
+      descCorrente = descCorrente - 1;
+
+      allSlide[slideCorrente].classList.add("visibile");
+      allTitoli[titoloCorrente].classList.add("visibile");
+      allDesc[descCorrente].classList.add("visibile");
+    } else if (slideCorrente == 0) {
+      console.log("stop");
+
+      allSlide[slideCorrente].classList.remove("visibile");
+      allTitoli[titoloCorrente].classList.remove("visibile");
+      allDesc[descCorrente].classList.remove("visibile");
+
+      slideCorrente = 3;
+      titoloCorrente = 3;
+      descCorrente = 3;
+
+      allSlide[slideCorrente].classList.add("visibile");
+      allTitoli[titoloCorrente].classList.add("visibile");
+      allDesc[descCorrente].classList.add("visibile");
+    }
+  }
+
+  const intervalloThInv = setInterval(myFunctionThInv, 3000);
+  function myFunctionThInv() {
+    if (
+      thumbnailsCorrente <= allthumbnails.length - 1 &&
+      thumbnailsCorrente > 0
+    ) {
+      allthumbnails[thumbnailsCorrente].classList.remove("noShadow");
+
+      thumbnailsCorrente = thumbnailsCorrente - 1;
+
+      allthumbnails[thumbnailsCorrente].classList.add("noShadow");
+    } else if (thumbnailsCorrente == 0) {
+      allthumbnails[thumbnailsCorrente].classList.remove("noShadow");
+
+      thumbnailsCorrente = 3;
+      allthumbnails[thumbnailsCorrente].classList.add("noShadow");
+    }
+    ferma.addEventListener("click", function myStopFunction() {
+      clearInterval(intervalloInv);
+      clearInterval(intervalloThInv);
+    });
+  }
+});
+
+//-----------------------------------------------------------------------
