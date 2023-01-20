@@ -40,24 +40,24 @@ Aggiungere bottoni di start/stop e di inversione del meccanismo di autoplay.
 
 const slider = [
   (imgUno = {
-    titolo: `<h3>Titolo immagine Uno</h3>`,
+    titolo: `<h3>Title</h3>`,
     url: `<img src="img/01_verde_img_640x360.png"`,
-    descrizione: "Descrizione img Uno",
+    descrizione: "Description 0 1.",
   }),
   (imgDue = {
-    titolo: `<h3>Titolo immagine Due</h3>`,
+    titolo: `<h3>Title</h3>`,
     url: `<img src="img/02_carmine_img_640x360.png"`,
-    descrizione: "Descrizione img Due",
+    descrizione: "Description 0 2.",
   }),
   (imgTre = {
-    titolo: `<h3>Titolo immagine Tre</h3>`,
+    titolo: `<h3>Title</h3>`,
     url: `<img src="img/03_magenta_img_640x360.png">`,
-    descrizione: "Descrizione img Tre",
+    descrizione: "Description 0 3.",
   }),
   (imgQuattro = {
-    titolo: `<h3>Titolo immagine Quattro</h3>`,
+    titolo: `<h3>Title</h3>`,
     url: `<img src="img/04_viola_img_640x360.png">`,
-    descrizione: "Descrizione img Quattro",
+    descrizione: "Description 0 4.",
   }),
 ];
 

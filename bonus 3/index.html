@@ -4,6 +4,23 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- font awasome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- fine font awasome -->
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Federo&display=swap"
+      rel="stylesheet"
+    />
+    <!-- fine google font -->
     <link rel="stylesheet" href="css/style.css" />
     <title>Carosello Array di Oggetti</title>
   </head>
@@ -12,17 +29,21 @@
       <div class="slider-container">
         <div class="thumbnails"></div>
         <div class="frecce">
-          <div class="freccia frecciaDestra"><p>D</p></div>
-          <div class="freccia frecciaSinistra"><p>S</p></div>
+          <button class="freccia frecciaDestra">
+            <p><i class="fa-solid fa-chevron-right"></i></p>
+          </button>
+          <button class="freccia frecciaSinistra">
+            <p><i class="fa-solid fa-chevron-left"></i></p>
+          </button>
         </div>
         <div class="slide"></div>
+        <div class="buttons">
+          <button class="start">Start</button>
+          <button class="invertito">Reverse</button>
+          <button class="stop">Stop</button>
+        </div>
       </div>
     </section>
-    <div class="buttons">
-      <button class="start">Start</button>
-      <button class="invertito">Invertito</button>
-      <button class="stop">Stop</button>
-    </div>
 
     <script type="text/javascript" src="js/script.js"></script>
   </body>
