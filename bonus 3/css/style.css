@@ -26,6 +26,10 @@ h3 {
   top: 46%;
   left: 50%;
   transform: translate(-60%, -50%);
+
+  box-shadow: -6px -6px 14px rgba(255, 255, 255, 0.7),
+    -6px -6px 10px rgba(255, 255, 255, 0.5),
+    6px 6px 8px rgba(255, 255, 255, 0.075), 6px 6px 10px rgba(0, 0, 0, 0.15);
 }
 
 .fa-solid,
@@ -46,7 +50,7 @@ h3 {
 
 .frecciaDestra {
   position: absolute;
-  right: -220px;
+  right: -217px;
   top: 50%;
   transform: translate(0px, -16px);
 }
@@ -89,13 +93,17 @@ h3 {
 }
 
 .thumbnails {
-  background-color: rgb(0, 0, 0);
+  background-color: #7c766f;
   height: 100%;
   width: 125px;
   position: absolute;
   z-index: 400;
-  right: -125px;
+  right: -123px;
   top: 0;
+
+  box-shadow: 6px -6px 14px rgb(255 255 255 / 70%),
+    6px -6px 10px rgb(255 255 255 / 50%), 6px 6px 8px rgb(255 255 255 / 8%),
+    6px 6px 10px rgb(0 0 0 / 15%);
 }
 
 .immaginiThumb {
